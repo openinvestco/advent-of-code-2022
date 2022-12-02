@@ -1,6 +1,7 @@
 use std::fs;
 
 fn main() {
+    part_one()
     part_two()
 }
 
