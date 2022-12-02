@@ -26,3 +26,24 @@ fn part_one() {
     println!("Total Score: {total_score}");
 }
 
+fn part_two() {
+    let input = fs::read_to_string("input.txt")
+        .expect("Bad input, no presents for you");
+
+    let games = input.split("\n");
+
+    let mut total_score = 0;
+    for game in games {
+        let p:Vec<&str> = game.split(" ").collect();
+        let score = match p[1] {
+            "X" => match p[0] {"A"=> 3, "B"=> 1, _=> 2},
+            "Y" => match p[0] {"A"=> 1+3, "B"=> 2+3, _=> 3+3},
+            _ => match p[0] {"A"=> 2+6, "B"=> 3+6, _=> 1+6}
+        };
+        total_score += score;
+        // let outcome_closure = match o { "X" => "Lose", "Y" => "Tie", _ => "Win"};
+        println!("P1: {}, Outcome: {}, Score: {}", p[0] , p[1] , score);
+        
+    }
+    println!("Total Score: {total_score}");
+}
