@@ -37,6 +37,7 @@ fn part_two() {
     for game in games {
         let p:Vec<&str> = game.split(" ").collect();
         let score = match p[1] {
+            // Don't be clever
             "X" => match p[0] {"A"=> 3, "B"=> 1, _=> 2},
             "Y" => match p[0] {"A"=> 1+3, "B"=> 2+3, _=> 3+3},
             _ => match p[0] {"A"=> 2+6, "B"=> 3+6, _=> 1+6}

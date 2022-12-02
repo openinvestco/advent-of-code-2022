@@ -5,7 +5,7 @@ fn main() {
     part_two();
 }
 
-fn get_calories_and_elves() -> (usize, Vec<i32>) {
+fn get_calories_and_elves() -> Vec<i32> {
     let input = fs::read_to_string("input.txt")
     .expect("Bad input, no presents for you");
 
@@ -22,11 +22,11 @@ fn get_calories_and_elves() -> (usize, Vec<i32>) {
             elf_calories[elf_no] += calorie.parse::<i32>().unwrap();
         }
     }
-    return (elf_no, elf_calories)
+    elf_calories
 }
 
 fn part_one() {
-    let (_, elf_calories) = get_calories_and_elves();
+    let elf_calories = get_calories_and_elves();
 
     // Sanity checker
     // for (i, calories) in elf_calories.iter().enumerate() {
@@ -38,7 +38,7 @@ fn part_one() {
 }
 
 fn part_two() {
-    let (_, mut elf_calories) = get_calories_and_elves();
+    let mut elf_calories = get_calories_and_elves();
 
     elf_calories.sort_by(|a, b| b.partial_cmp(a).unwrap());
 
