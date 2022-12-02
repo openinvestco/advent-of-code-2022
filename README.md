@@ -1,4 +1,4 @@
-# 🎄🎁advent-of-code-2021🎁🎄 (in Rust🦀!)
+# 🎄🎁[advent-of-code-2022](https://adventofcode.com/)🎁🎄 (in Rust🦀!)
 
 ## First Time Set Up
 ### Mac/Linux
