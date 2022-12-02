@@ -41,7 +41,6 @@ fn part_two() {
             _ => match p[0] {"A"=> 2+6, "B"=> 3+6, _=> 1+6}
         };
         total_score += score;
-        // let outcome_closure = match o { "X" => "Lose", "Y" => "Tie", _ => "Win"};
         println!("P1: {}, Outcome: {}, Score: {}", p[0] , p[1] , score);
         
     }
