@@ -6,7 +6,7 @@ fn main() {
 }
 
 fn part_one() {
-    let input = fs::read_to_string("input.txt")
+    let input = fs::read_to_string("../input.txt")
         .expect("Bad input, no presents for you");
 
     let games = input.split("\n");
@@ -28,7 +28,7 @@ fn part_one() {
 }
 
 fn part_two() {
-    let input = fs::read_to_string("input.txt")
+    let input = fs::read_to_string("../input.txt")
         .expect("Bad input, no presents for you");
 
     let games = input.split("\n");
@@ -43,7 +43,8 @@ fn part_two() {
             _ => match p[0] {"A"=> 2+6, "B"=> 3+6, _=> 1+6}
         };
         total_score += score;
-        println!("P1: {}, Outcome: {}, Score: {}", p[0] , p[1] , score);
+        // Sanity Check
+        // println!("P1: {}, Outcome: {}, Score: {}", p[0] , p[1] , score);
         
     }
     println!("Total Score: {total_score}");
