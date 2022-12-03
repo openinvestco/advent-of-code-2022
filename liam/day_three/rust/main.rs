@@ -15,11 +15,13 @@ fn part_one() {
         
     let mut total = 0;
     for rucksack in rucksacks {
-        
+        // Split into halves
         let size = rucksack.chars().count() / 2;
         let r1: Vec<char> = rucksack[..size].chars().collect();
         let r2 = &rucksack[size..];
+        // Filter, if second half contains then remove
         let shared = r1.into_iter().filter(|&c| r2.contains(c)).collect::<Vec<_>>()[0];
+        // Ascii math
         let priority = if shared as u32 <= 90 {shared as u32 - 64 + 26} else {shared as u32 - 96};
         total += priority;
     }
@@ -33,6 +35,7 @@ fn part_two() {
     let rucksacks: Vec<&str> = input.split("\n").collect();
 
     let mut total = 0;
+    // Basically the same solution, just group by 3
     for i in 0..rucksacks.len() / 3 {
         let r1: Vec<char> = rucksacks[3*i].chars().collect();
         let r2 = rucksacks[3*i+1];
