@@ -48,3 +48,35 @@ fn part_one() {
     }
     
 }
+fn part_two() {
+    let mut stacks = vec![
+        vec!["C", "Z", "N", "B", "M", "W", "Q", "V"], 
+        vec!["H", "Z", "R", "W", "C", "B"], 
+        vec!["F", "Q", "R", "J"], 
+        vec!["Z", "S", "W", "H", "F", "N", "M", "T"], 
+        vec!["G", "F", "W", "L", "N", "Q", "P"], 
+        vec!["L", "P", "W"], 
+        vec!["V", "B", "D", "R", "G", "C", "Q", "J"],
+        vec!["Z", "Q", "N", "B", "W"],
+        vec!["H", "L", "F", "C", "G", "T", "J"],
+    ];
+
+    println!("{:?}", stacks);
+    let input = fs::read_to_string("../input.txt")
+        .expect("Bad input, no presents for you");
+
+    let moves = input.split("\n");
+    for _move in moves {
+        let move_set= _move.split_whitespace().collect::<Vec<&str>>();
+        let count = move_set[1].parse::<usize>().unwrap();
+        let v1 = move_set[3].parse::<usize>().unwrap() -1 ;
+        let v2 = move_set[5].parse::<usize>().unwrap() -1;
+        let v1_pos = stacks[v1].len() - count;
+        let mut buf: Vec<&str> = stacks[v1].drain(v1_pos..).collect();
+        stacks[v2].append(&mut buf);
+        println!("{:?}", stacks);
+    }
+    for stack in stacks {
+        println!("{}", stack.last().unwrap())
+    }
+}
