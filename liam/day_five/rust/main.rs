@@ -1,18 +1,33 @@
 use std::fs;
 
 
-// [V]         [T]         [J]        
-// [Q]         [M] [P]     [Q]     [J]
-// [W] [B]     [N] [Q]     [C]     [T]
-// [M] [C]     [F] [N]     [G] [W] [G]
-// [B] [W] [J] [H] [L]     [R] [B] [C]
-// [N] [R] [R] [W] [W] [W] [D] [N] [F]
-// [Z] [Z] [Q] [S] [F] [P] [B] [Q] [L]
-// [C] [H] [F] [Z] [G] [L] [V] [Z] [H]
-//  1   2   3   4   5   6   7   8   9 
+
 
 fn main() {
+    part_one();
     part_two();
+}
+
+fn input_parser() {
+    input = "[V]         [T]         [J]        
+    [Q]         [M] [P]     [Q]     [J]
+    [W] [B]     [N] [Q]     [C]     [T]
+    [M] [C]     [F] [N]     [G] [W] [G]
+    [B] [W] [J] [H] [L]     [R] [B] [C]
+    [N] [R] [R] [W] [W] [W] [D] [N] [F]
+    [Z] [Z] [Q] [S] [F] [P] [B] [Q] [L]
+    [C] [H] [F] [Z] [G] [L] [V] [Z] [H]
+     1   2   3   4   5   6   7   8   9 "
+    let lines = input.split("\n");
+    for line in lines {
+        println!("{}",line)
+    }
+    use std::str;
+let subs = string.as_bytes()
+    .chunks(sub_len)
+    .map(str::from_utf8)
+    .collect::<Result<Vec<&str>, _>>()
+    .unwrap();
 }
 
 fn part_one() {
