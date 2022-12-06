@@ -64,6 +64,7 @@ fn main() {
     //day3::day3::part_2::run();
     //day4::day4::part_2::run();
     day5::day5::part_1::run();
+    day5::day5::part_2::run();
 }
 
 pub fn read_lines<P>(filename: P) -> io::Result<io::Lines<io::BufReader<File>>>
