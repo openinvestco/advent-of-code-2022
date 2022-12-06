@@ -10,6 +10,7 @@ mod day2;
 mod day3;
 mod day4;
 mod day5;
+mod day6;
 const COPY_DIR: &'static str = "data";
 
 /// A helper function for recursively copying a directory.
@@ -63,8 +64,10 @@ fn main() {
     //day3::day3::part_1::run();
     //day3::day3::part_2::run();
     //day4::day4::part_2::run();
-    day5::day5::part_1::run();
-    day5::day5::part_2::run();
+    //day5::day5::part_1::run();
+    //day5::day5::part_2::run();
+    //day6::day6::part_1::run();
+    day6::day6::part_2::run();
 }
 
 pub fn read_lines<P>(filename: P) -> io::Result<io::Lines<io::BufReader<File>>>
