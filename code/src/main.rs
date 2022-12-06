@@ -8,6 +8,8 @@ use std::{
 mod day1;
 mod day2;
 mod day3;
+mod day4;
+mod day5;
 const COPY_DIR: &'static str = "data";
 
 /// A helper function for recursively copying a directory.
@@ -57,9 +59,11 @@ fn main() {
     build_script();
     //day1::day1::run();
     //day2::day2::part_1::run();
-    day2::day2::part_2::run();
-    day3::day3::part_1::run();
-    day3::day3::part_2::run();
+    //day2::day2::part_2::run();
+    //day3::day3::part_1::run();
+    //day3::day3::part_2::run();
+    //day4::day4::part_2::run();
+    day5::day5::part_1::run();
 }
 
 pub fn read_lines<P>(filename: P) -> io::Result<io::Lines<io::BufReader<File>>>
