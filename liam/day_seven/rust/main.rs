@@ -3,10 +3,11 @@ use std::collections::HashMap;
 
 fn main() {
     part_one();
+    part_two();
 }
 
-fn part_one() {
-    let input = fs::read_to_string("../input.txt")
+fn file_system_iterator(input: &str) -> HashMap<String, usize> {
+    let input = fs::read_to_string(input)
         .expect("Bad input, no presents for you");
 
     let mut position: Vec<&str> = Vec::new();
@@ -32,7 +33,18 @@ fn part_one() {
             }
         }
     }
+    return dir_sizes
+}
+
+fn part_one() {
+    let dir_sizes = file_system_iterator("../input.txt");
     println!("{}", dir_sizes.values().cloned().filter(|count| count <= &100000).sum::<usize>());
 }
 
-fn part_two() {}
+fn part_two() {
+    let dir_sizes = file_system_iterator("../input.txt");
+    let used_space = dir_sizes.get("/").unwrap();
+    let unused_space = 70000000 - used_space;
+    let remaining_space_to_free = 30000000 - unused_space;
+    println!("{}", dir_sizes.values().cloned().filter(|count| count >= &remaining_space_to_free).min().unwrap());
+}
